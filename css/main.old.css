@@ -1,0 +1,587 @@
+/****
+reset
+****/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5,
+h6, hr, pre, form, fieldset, input, p, blockquote, table,
+th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+fieldset, img, abbr {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, h1, h2, h3,
+h4, h5, h6, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+caption, th {
+  text-align: left;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+a {
+  text-decoration: none;
+}
+
+/*********
+typography
+*********/
+@font-face {
+  font-family: "Syntax-Bold";
+  src: url("../fonts/Syntax-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Syntax";
+  src: url("../fonts/Syntax.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Syntax-Light";
+  src: url("../fonts/Syntax-Light.otf") format("opentype");
+}
+
+/*****
+layout
+*****/
+body, input, textarea {
+  font-family: Syntax;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-smooth: always;
+  padding-top: 30px;
+  background: #ecedf2;
+  color: #000;
+  border: none;
+}
+
+strong {
+  font-family: Syntax;
+}
+
+body {
+  padding-top: 100px;
+}
+
+textarea {
+  padding: 10px;
+  margin: 10px 0 10px;
+  max-width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+a {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 1.5em;
+  padding-bottom: 10px;
+  line-height: 1.2em;
+}
+
+h1 a {
+  width: 77%;
+}
+
+h2, h3 {
+  font-size: 2em;
+  padding-top: 50px;
+  font-weight: 150;
+  line-height: 1em;
+}
+
+article p, footer p {
+  padding: 5px;
+  line-height: 1.5em;
+}
+
+h1, h2, h3, p {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+}
+
+/*.close {
+  background: url("../img/power.png") no-repeat;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  top: 5px;
+  left: 5px;
+  position: absolute;
+}*/
+/***
+menu
+***/
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  width: 100%;
+  overflow: hidden;
+  height: 100;
+}
+
+header ul {
+  display: block;
+  overflow: hidden;
+  height: 100;
+}
+
+header li a {
+  display: inline-block;
+  height: 100;
+}
+
+header li a span {
+  display: block;
+  margin: 25px auto;
+  text-align: center;
+  width: 200px;
+  font-size: 2.5em;
+}
+
+header li a.active {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header li a:hover {
+  text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 1px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/*******
+articles
+*******/
+article {
+  text-align: center;
+  padding: 50px 0 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+article h1,
+article h2,
+article p {
+  position: relative;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transform: translate(200px, 0px);
+  -moz-transform: translate(200px, 0px);
+  -ms-transform: translate(200px, 0px);
+  -o-transform: translate(200px, 0px);
+  transform: translate(200px, 0px);
+}
+
+article h2 {
+  font-family: Syntax-Light;
+  color: black;
+}
+
+article h3 {
+  float: right;
+  font-size: 1em;
+  width: 40px;
+  text-transform: uppercase;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  margin-right: 10px;
+  text-align: center;
+}
+
+article num {
+  font-size: 2em;
+  line-height: 1em;
+  font-family: Syntax-Bold;
+}
+
+article h1.active,
+article h2.active,
+article p.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: all 0.9s ease-in-out;
+  -moz-transition: all 0.9s ease-in-out;
+  -o-transition: all 0.9s ease-in-out;
+  transition: all 0.9s ease-in-out;
+}
+
+article img {
+  position: relative;
+  -webkit-transform: translate(400px, 0px);
+  -moz-transform: translate(400px, 0px);
+  -ms-transform: translate(400px, 0px);
+  -o-transform: translate(400px, 0px);
+  transform: translate(400px, 0px);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+article img.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: all 0.9s ease-in-out;
+  -moz-transition: all 0.9s ease-in-out;
+  -o-transition: all 0.9s ease-in-out;
+  transition: all 0.9s ease-in-out;
+}
+
+article img.active a {
+  decoration: none;
+}
+
+article ul {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+article ul li {
+  display: block;
+  margin: 8px 0;
+  padding-left: 20px;
+  line-height: 30px;
+}
+
+/****
+aside
+****/
+aside {
+  position: absolute;
+  font-family: Syntax-Bold;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  top: 98px;
+  left: 0px;
+  width: 350px;
+  padding: 25px;
+  z-index: 998;
+  cursor: pointer;
+  -webkit-transform: translate(-400px, 0px);
+  -moz-transform: translate(-400px, 0px);
+  -ms-transform: translate(-400px, 0px);
+  -o-transform: translate(-400px, 0px);
+  transform: translate(-400px, 0px);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 5px, black 0 0 0, black 0 0 0, black 0 0 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 5px, black 0 0 0, black 0 0 0, black 0 0 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 5px, black 0 0 0, black 0 0 0, black 0 0 0;
+}
+
+aside p {
+  margin: 20px;
+}
+
+aside .close {
+  top: 5px;
+  left: 5px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+aside.tab-closed {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transform: translate(-400px, 0px);
+  -moz-transform: translate(-400px, 0px);
+  -ms-transform: translate(-400px, 0px);
+  -o-transform: translate(-400px, 0px);
+  transform: translate(-400px, 0px);
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+aside.tab {
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+aside.tab p {
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+/*****
+styles
+*****/
+.spartan {
+  background: #ecedf2;
+  color: #000;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.spartan a {
+  color: #6c749a;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.spartan a:hover {
+  color: #242634;
+  background: #fbfbfc;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  overflow: visible;
+}
+
+.spartan header {
+  background: #ecedf2;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 1px 0;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.spartan header a {
+  text-transform: uppercase;
+}
+
+.spartan aside {
+  background: #f5f5f5;
+  color: #000;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.spartan h1 {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.05);
+  -moz-box-shadow: rgba(255, 255, 255, 0.05);
+  box-shadow: rgba(255, 255, 255, 0.05);
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.spartan h1 a {
+  color: #6c749a;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.05);
+  -moz-box-shadow: rgba(255, 255, 255, 0.05);
+  box-shadow: rgba(255, 255, 255, 0.05);
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.spartan h2, .spartan h3 {
+  color: #e1e1e1;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.spartan h3.date {
+  background: #f5f5f5;
+}
+
+.spartan h1, .spartan h2, .spartan h3, .spartan p {
+  text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 1px;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.spartan footer {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 3px, rgba(0, 0, 0, 0.35) 0 -1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 3px, rgba(0, 0, 0, 0.35) 0 -1px 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 3px, rgba(0, 0, 0, 0.35) 0 -1px 0;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix {
+  background: #041729;
+  color: #fff;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix a {
+  color: #157bdc;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix a:hover {
+  color: #0b0c6f;
+  background: #0b3e6f;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  overflow: visible;
+}
+
+.phoenix header {
+  background: #041729;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 1px 0;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.phoenix header a {
+  text-transform: uppercase;
+}
+
+.phoenix aside {
+  background: #062440;
+  color: #fff;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix h1 {
+  color: #fff;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix h1 a {
+  color: #157bdc;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix h2, .phoenix h3 {
+  color: #0b3e6f;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.phoenix h3.date {
+  background: #062440;
+}
+
+.phoenix h1, .phoenix h2, .phoenix h3, .phoenix p {
+  text-shadow: black 0 -1px 1px;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.phoenix footer {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 3px, rgba(0, 0, 0, 0.35) 0 -1px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 3px, rgba(0, 0, 0, 0.35) 0 -1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 3px, rgba(0, 0, 0, 0.35) 0 -1px 3px;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
